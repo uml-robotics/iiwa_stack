@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: iiwa_description
+    relative_path: urdf/iiwa7_robotiq_2f_85.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/iiwa7.srdf
+  CONFIG:
+    author_name: brian flynn
+    author_email: brian_flynn@uml.edu
+    generated_timestamp: 1606764549
