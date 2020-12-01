@@ -15,12 +15,24 @@
   <xacro:include filename="$(find iiwa_description)/grippers/robotiq_2f_85/urdf/robotiq_2f_85_transmission_macro.xacro" />
   
   <xacro:arg name="hardware_interface" default="PositionJointInterface"/>
-  <xacro:arg name="robot_name" default="iiwa"/>
+  <xacro:arg name="robot_name" default="iiwa7"/>
   <xacro:arg name="origin_xyz" default="0 0 0"/>
   <xacro:arg name="origin_rpy" default="0 0 0"/>
   
   <!-- Fix to world just for testing -->
-  <link name="world"/>
+  <link name="world" />
+  
+  <joint name="connect_world_and_table" type="fixed">
+    <child link="table_base_link" />
+    <parent link="world" />
+    <origin xyz="0.0 0.0 0.41" rpy="0.0 0.0 0.0" />    
+  </joint>
+
+  <joint name="connect_table_and_arm" type="fixed">
+    <parent link="table_mounting_plate_link" />
+    <child link = "$(arg robot_name)_link_0" />
+    <origin xyz="0.0 0.0 0.03625" rpy="0.0 0.0 ${pi/2}" />  
+  </joint>
   
   <!--iiwa-->
   <xacro:iiwa7 hardware_interface="$(arg hardware_interface)" robot_name="$(arg robot_name)" parent="world">
@@ -28,7 +40,7 @@
   </xacro:iiwa7>
 
   <!-- gripper -->
-  <xacro:load_gripper parent="$(arg robot_name)_ee_link"  prefix=""/>
+  <xacro:load_gripper parent="$(arg robot_name)_link_ee"  prefix=""/>
   <xacro:load_gazebo_gripper_transmissions prefix=""/>
 
   <!-- workstation -->
