@@ -20,8 +20,8 @@
 
     <!-- Load Gazebo lib and set the robot namespace -->
     <gazebo>
-      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-        <robotNamespace>/${robot_name}</robotNamespace>
+      <plugin name="ros_control" filename="libgazebo_ros_control.so">
+        <!-- <robotNamespace>/${robot_name}</robotNamespace> TODO: Look into this later, the controllers do not work with this line currently, likely has to do with namespace -->
       </plugin>
     </gazebo>
 

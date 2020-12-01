@@ -6,13 +6,13 @@ controller_list:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
-      - iiwa7_joint_1
-      - iiwa7_joint_2
-      - iiwa7_joint_3
-      - iiwa7_joint_4
-      - iiwa7_joint_5
-      - iiwa7_joint_6
-      - iiwa7_joint_7
+      - iiwa_joint_1
+      - iiwa_joint_2
+      - iiwa_joint_3
+      - iiwa_joint_4
+      - iiwa_joint_5
+      - iiwa_joint_6
+      - iiwa_joint_7
   - name: "robotiq_2f_85_gripper_controller"
     action_ns: gripper_cmd
     default: True
