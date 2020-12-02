@@ -11,8 +11,8 @@
   <xacro:include filename="$(find uml_hri_nerve_armada_workstation)/workstation_description/workstation_model.urdf.xacro" />
 
   <!-- robotiq_2f_140 -->
-  <xacro:include filename="$(find iiwa_description)/grippers/robotiq_2f_85/urdf/robotiq_2f_140_macro.xacro" />
-  <xacro:include filename="$(find iiwa_description)/grippers/robotiq_2f_85/urdf/robotiq_2f_140_transmission_macro.xacro" />
+  <xacro:include filename="$(find iiwa_description)/grippers/robotiq_2f_140/urdf/robotiq_2f_140_macro.xacro" />
+  <xacro:include filename="$(find iiwa_description)/grippers/robotiq_2f_140/urdf/robotiq_2f_140_transmission_macro.xacro" />
   
   <xacro:arg name="hardware_interface" default="PositionJointInterface"/>
   <xacro:arg name="robot_name" default="iiwa"/>
