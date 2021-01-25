@@ -9,10 +9,14 @@
     <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="manipulator_and_endeffector">
+      <group name="manipulator" />
+      <group name="endeffector" />
+    </group>
     <group name="manipulator">
         <chain base_link="iiwa_link_0" tip_link="iiwa_link_ee" />
     </group>
-    <group name="gripper">
+    <group name="endeffector">
         <joint name="gripper_base_joint" />
         <joint name="finger_joint" />
         <joint name="left_outer_finger_joint" />
@@ -35,7 +39,7 @@
         <joint name="iiwa_joint_6" value="0" />
         <joint name="iiwa_joint_7" value="0" />
     </group_state>
-    <group_state name="opened" group="gripper">
+    <group_state name="opened" group="endeffector">
         <joint name="left_inner_finger_joint" value="0" />
         <joint name="right_inner_knuckle_joint" value="0" />
         <joint name="finger_joint" value="0" />
@@ -43,7 +47,7 @@
         <joint name="left_inner_knuckle_joint" value="0" />
         <joint name="right_outer_knuckle_joint" value="0" />
     </group_state>
-    <group_state name="closed" group="gripper">
+    <group_state name="closed" group="endeffector">
         <joint name="left_inner_finger_joint" value="0.79" />
         <joint name="right_inner_knuckle_joint" value="0.79" />
         <joint name="finger_joint" value="0.79" />
@@ -52,7 +56,7 @@
         <joint name="right_outer_knuckle_joint" value="0.79" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="gripper" parent_link="iiwa_link_ee" group="gripper" />
+    <end_effector name="robotiq_2f_85" parent_link="iiwa_link_ee" group="endeffector" parent_group="manipulator" />
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="left_inner_finger_joint" />
     <passive_joint name="left_inner_knuckle_joint" />
